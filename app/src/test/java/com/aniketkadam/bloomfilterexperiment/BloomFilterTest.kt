@@ -3,7 +3,7 @@ package com.aniketkadam.bloomfilterexperiment
 import com.google.common.hash.BloomFilter
 import com.google.common.hash.Funnels
 import org.junit.Test
-import java.nio.charset.Charset
+import java.nio.charset.StandardCharsets
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -16,7 +16,7 @@ class BloomFilterTest {
     fun `playing with bloom filters`() {
         @Suppress("UnstableApiUsage")
         val animalBloomFilter =
-            BloomFilter.create(Funnels.stringFunnel(Charset.defaultCharset()), 4)
+            BloomFilter.create(Funnels.stringFunnel(StandardCharsets.UTF_8), 4)
 
         with(animalBloomFilter) {
             put("cat")
