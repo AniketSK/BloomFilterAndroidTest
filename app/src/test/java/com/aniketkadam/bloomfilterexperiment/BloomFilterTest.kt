@@ -26,6 +26,7 @@ class BloomFilterTest {
         }
 
         assert(!animalBloomFilter.mightContain("goat"))
+        assert(animalBloomFilter.mightContain("cat"))
     }
 
 }
