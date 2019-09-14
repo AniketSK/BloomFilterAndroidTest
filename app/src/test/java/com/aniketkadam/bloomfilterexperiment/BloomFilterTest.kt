@@ -55,7 +55,7 @@ class BloomFilterTest {
     fun `calculate time and space requirements for using a bloom filter with EasyList which is a large text file of adblocking rules, one per line`() {
 
         val totalExpectedInsertions = 74_000 // cat easylist.txt | wc -l
-        val falsePositiveProbability: Double = 1.toDouble() / 10_000 // 1 in 10,000
+        val falsePositiveProbability: Double = 1.0 / 10_000 // 1 in 10,000
 
         val optimalBits =
             (-totalExpectedInsertions * Math.log(falsePositiveProbability) / (Math.log(2.0) * Math.log(
